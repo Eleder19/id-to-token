@@ -10,18 +10,22 @@ function pause(ms) {
         process.exit();
     }, ms);  
 };
-rl.question('Enter user id: \n', async (data) => {
-    try {
-            let userId = data.toString().trim();
-            let token = btoa(userId);
-            if (!userId || userId.length !== 18) {
-                console.log('You have not specified a valid user id!');
-                pause(10000);
-            } else {
-                console.log(`First part of the user id's token: ${token}`);
-                pause(10000);
-            };
-    } catch {
-        return new Error;
-    }
-});
+function prompt() {
+    rl.question('Enter user id: \n', async (data) => {
+        try {
+                let userId = data.toString().trim();
+                let token = btoa(userId);
+                if (!userId || userId.length !== 18) {
+                    console.log('You have not specified a valid user id!');
+                    prompt();
+                } else {
+                    console.log(`First part of the user id's token: ${token}`);
+                    pause(10000);
+                };
+        } catch {
+            return new Error;
+        };
+    });
+};
+
+prompt();
