@@ -1,0 +1,11 @@
+{
+  "name": "id-to-token",
+  "version": "1.0.0",
+  "description": "Converts user ID to the first part of their token.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eleder",
+  "license": "ISC"
+}
