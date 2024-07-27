@@ -3,13 +3,6 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
 });
-function pause(ms) {
-    rl.close();
-    console.log(`Application will close in ${ms / 1000} seconds.`)
-    setTimeout(() => {
-        process.exit();
-    }, ms);  
-};
 function prompt() {
     rl.question('Enter user id: \n', async (data) => {
         try {
@@ -20,7 +13,7 @@ function prompt() {
                     prompt();
                 } else {
                     console.log(`First part of the user id's token: ${token}`);
-                    pause(10000);
+                    prompt();
                 };
         } catch {
             return new Error;
