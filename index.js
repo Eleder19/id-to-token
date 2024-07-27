@@ -21,6 +21,7 @@ rl.question('Enter user id: \n', async (data) => {
                 reject();
             } else {
                 console.log(`First part of the user id's token: ${token}`);
+                pause(10000);
                 resolve();
             };
         });
