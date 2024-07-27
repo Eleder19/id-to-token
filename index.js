@@ -15,9 +15,9 @@ rl.question('Enter user id: \n', async (data) => {
         await new Promise((resolve, reject) => {
             let userId = data.toString().trim();
             let token = btoa(userId);
-            if (!userId) {
-                console.log('You have not specified a user id!');
-                pause(5000);
+            if (!userId || userId.length !== 18) {
+                console.log('You have not specified a valid user id!');
+                pause(10000);
                 reject();
             } else {
                 console.log(`First part of the user id's token: ${token}`);
