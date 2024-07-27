@@ -24,7 +24,6 @@ rl.question('Enter user id: \n', async (data) => {
                 resolve();
             };
         });
-        return pause(5000);
     } catch {
         return new Error;
     }
